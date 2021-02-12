@@ -24,7 +24,11 @@ function translate(data) {
         template_code = template_code.replace(temp, arguments[counter]);
       }
     }
-    console.log("\n->" + template_code);
+    // console.log("\n->" + template_code);
+    fs.appendFile("tempcode.js", template_code + "\n", function (err) {
+      if (err) throw err;
+      // console.log("Saved!");
+    });
   });
 }
 

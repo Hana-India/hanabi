@@ -1,11 +1,12 @@
 const trans = require("./translator");
+const { exec } = require("child_process");
 var fs = require("fs"),
   readline = require("readline");
 
 function processor(source) {
   var rd = readline.createInterface({
     input: fs.createReadStream(source),
-    // output: process.stdout,
+
     console: false,
   });
   var code = "";
